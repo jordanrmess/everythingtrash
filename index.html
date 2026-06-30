@@ -1,37 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <title>cup</title>
 
-    <script
-      type="module"
-      src="https://unpkg.com/playhtml/dist/init.es.js"
-    ></script>
+    <!-- <script type="module">
+      const cup = document.getElementById("cup");
+      cup.onClick = () => console.log("click 11");
+      cup.defaultData = { count: 1 };
+      cup.resetShortcut = "shiftKey";
+      //increment counter on click
+      cup.onClick = (_e, { setData }) => {
+        console.log("click");
+        if (e.shiftKey) {
+          setData({ count: 1 });
+          return;
+        }
+        setData({
+          count: Math.min(data.count + 1, 5),
+        });
 
-    <script>
-      window.addEventListener("DOMContentLoaded", () => {
-        const cup = document.getElementById("cup");
-
-        cup.defaultData = { count: 1 };
-
-        cup.onClick = (e, { data, setData }) => {
-          if (e.shiftKey) {
-            setData({ count: 1 });
-            return;
-          }
-
-          setData({
-            count: Math.min((data?.count ?? 1) + 1, 5),
-          });
-        };
-
+        //update image on increment
         cup.updateElement = ({ element, data }) => {
-          const count = data?.count ?? 1;
-          element.src = `./cups/${count}.png`;
+          element.src = `./cups/${data.count}.png`;
         };
-      });
-    </script>
+      };
+    </script> -->
 
     <style>
       #cup {
@@ -43,11 +36,22 @@
 
   <body>
     <h1 can-move><i>everything is trash</i></h1>
-      <img
-        can-play
-        id="cup"
-        src="./cups/1.png"
-
-    </div>
+    <img id="cup" src="./cups/1.png" can-move />
+    <script type="module">
+      const cup = document.getElementById("cup");
+      let count = 1;
+      cup.onclick = (e) => {
+        if (e.shiftKey) {
+          count = 1;
+        } else {
+          count = Math.min(count + 1, 5);
+        }
+        cup.src = `./cups/${count}.png`;
+      };
+    </script>
+    <script type="module">
+      import { playhtml } from "https://unpkg.com/playhtml";
+      playhtml.init();
+    </script>
   </body>
 </html>
