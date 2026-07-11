@@ -6,105 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        color-scheme: dark;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: 'Rock 3D', sans-serif;
-        background: #f2f0ff;
-        color: #111;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .header-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-bottom: 1.5rem;
-        width: min(100%, 1080px);
-      }
-
-      .header-row h1 {
-        margin: 0;
-        font-size: clamp(2.2rem, 6vw, 4rem);
-        line-height: 1.05;
-      }
-
-      .controls {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.75rem;
-        flex-wrap: wrap;
-      }
-
-      .controls select,
-      .controls button {
-        font-size: 1rem;
-        min-height: 52px;
-        padding: 0.95rem 1.25rem;
-        border-radius: 1rem;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        touch-action: manipulation;
-      }
-
-      .controls select {
-        min-width: 140px;
-        background: #fff;
-        color: #111;
-      }
-
-      .controls button {
-        background: #2f2b75;
-        color: #fff;
-      }
-
-      .controls button:active,
-      .controls select:active {
-        transform: scale(0.98);
-      }
-
-      #trash-items {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.25rem;
-        justify-content: center;
-        align-items: center;
-        width: min(100%, 1080px);
-      }
-
-      .trash {
-        width: min(220px, 45vw);
-        max-width: 260px;
-        height: auto;
-        touch-action: manipulation;
-        cursor: pointer;
-        transition: transform 0.15s ease;
-        user-select: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        -webkit-touch-callout: none;
-        -webkit-tap-highlight-color: transparent;
-      }
-
-      .trash:active,
-      .trash:hover {
-        transform: scale(1.03);
-      }
-    </style>
+    <link rel="stylesheet" href="./style.css">
   </head>
 
   <body>
@@ -114,6 +16,7 @@
         <select id="item-type">
           <option value="cans">Can</option>
           <option value="cups">Cup</option>
+          <option value="lamps">Lamp</option>
         </select>
         <button id="add-item" type="button">Add Item</button>
       </div>
@@ -132,6 +35,14 @@
         class="trash"
         src="./cans/1.svg"
         data-type="cans"
+        data-count="1"
+        can-move
+      />
+       <img
+      id="lamp-1"
+        class="trash"
+        src="./lamps/1.svg"
+        data-type="lamps"
         data-count="1"
         can-move
       />
