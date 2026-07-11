@@ -15,10 +15,15 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
 
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p out
+          cp -r index.html style.css cans cups lamps js .nojekyll CNAME out/
+
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "."
+          path: "out"
 
   deploy-pages:
     needs: deploy
@@ -29,4 +34,5 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
+        id: deploy-pages
         uses: actions/deploy-pages@v1
