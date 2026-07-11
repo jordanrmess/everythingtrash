@@ -35,5 +35,5 @@ document.getElementById("add-item").addEventListener("click", () => {
 
   trashItems.appendChild(newItem);
   initTrash(newItem);
-  playhtml.setupPlayElement(newItem);
+  setupPlayElement(newItem);
 });

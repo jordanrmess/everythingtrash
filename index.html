@@ -1,36 +1,102 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cup</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
     <style>
+      :root {
+        color-scheme: dark;
+      }
+
       body {
+        margin: 0;
+        min-height: 100vh;
         font-family: 'Rock 3D', sans-serif;
+        background: #f2f0ff;
+        color: #111;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
 
       .header-row {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 1rem;
         flex-wrap: wrap;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
+        width: min(100%, 1080px);
       }
 
       .header-row h1 {
         margin: 0;
+        font-size: clamp(2.2rem, 6vw, 4rem);
+        line-height: 1.05;
       }
 
       .controls {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .controls select,
+      .controls button {
+        font-size: 1rem;
+        min-height: 52px;
+        padding: 0.95rem 1.25rem;
+        border-radius: 1rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        touch-action: manipulation;
+      }
+
+      .controls select {
+        min-width: 140px;
+        background: #fff;
+        color: #111;
+      }
+
+      .controls button {
+        background: #2f2b75;
+        color: #fff;
+      }
+
+      .controls button:active,
+      .controls select:active {
+        transform: scale(0.98);
+      }
+
+      #trash-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        justify-content: center;
+        align-items: center;
+        width: min(100%, 1080px);
       }
 
       .trash {
-        width: 100px;
+        width: min(220px, 45vw);
+        max-width: 260px;
         height: auto;
+        touch-action: manipulation;
+        cursor: pointer;
+        transition: transform 0.15s ease;
+      }
+
+      .trash:active,
+      .trash:hover {
+        transform: scale(1.03);
       }
     </style>
   </head>
@@ -48,7 +114,7 @@
     </div>
     <div id="trash-items">
       <img
-      id="cup-1"  
+      id="cup-1"
       class="trash"
         src="./cups/1.svg"
         data-type="cups"
