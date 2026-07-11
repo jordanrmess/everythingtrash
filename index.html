@@ -12,20 +12,32 @@
 
   <body>
     <h1 can-move><i>everything is trash</i></h1>
-    <img
+    <div>
+      <label for="item-type">Add:</label>
+      <select id="item-type">
+        <option value="cans">Can</option>
+        <option value="cups">Cup</option>
+      </select>
+      <button id="add-item" type="button">Add Item</button>
+    </div>
+    <div id="trash-items">
+      <img
+      id="cup-1"  
       class="trash"
-      src="./cups/1.png"
-      data-type="cups"
-      data-count="1"
-      can-move
-    />
-    <img
-      class="trash"
-      src="./cans/1.png"
-      data-type="cans"
-      data-count="1"
-      can-move
-    />
+        src="./cups/1.png"
+        data-type="cups"
+        data-count="1"
+        can-move
+      />
+      <img
+      id="can-1"
+        class="trash"
+        src="./cans/1.png"
+        data-type="cans"
+        data-count="1"
+        can-move
+      />
+    </div>
     <script type="module" src="./js/main.js"></script>
     <script type="module">
       import { playhtml } from "https://unpkg.com/playhtml";

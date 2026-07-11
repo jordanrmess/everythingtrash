@@ -11,5 +11,10 @@ export class Trash {
   handleClick(e) {
     this.count = e.shiftKey ? 1 : Math.min(this.count + 1, 5);
     this.element.src = `./${this.type}/${this.count}.png`;
+
+    if (this.type === "cans") {
+      const audio = new Audio("./cans/crush.mp3");
+      audio.play().catch(() => {});
+    }
   }
 }
