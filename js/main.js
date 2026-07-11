@@ -28,7 +28,7 @@ document.getElementById("add-item").addEventListener("click", () => {
 
   newItem.className = "trash";
   newItem.id = itemId;
-  newItem.src = `./${itemType}/1.png`;
+  newItem.src = `./${itemType}/1.svg`;
   newItem.dataset.type = itemType;
   newItem.dataset.count = "1";
   newItem.setAttribute("can-move", "");

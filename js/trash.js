@@ -10,7 +10,7 @@ export class Trash {
 
   handleClick(e) {
     this.count = e.shiftKey ? 1 : Math.min(this.count + 1, 5);
-    this.element.src = `./${this.type}/${this.count}.png`;
+    this.element.src = `./${this.type}/${this.count}.svg`;
     console.log(this.count);
     if (this.count != 5) {
       if (this.type === "cans") {

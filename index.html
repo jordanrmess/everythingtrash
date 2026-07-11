@@ -2,7 +2,32 @@
 <html lang="en">
   <head>
     <title>cup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
     <style>
+      body {
+        font-family: 'Rock 3D', sans-serif;
+      }
+
+      .header-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+      }
+
+      .header-row h1 {
+        margin: 0;
+      }
+
+      .controls {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
       .trash {
         width: 100px;
         height: auto;
@@ -11,19 +36,21 @@
   </head>
 
   <body>
-    <h1 id="title">everything is trash</h1>
-    <div>
-      <select id="item-type">
-        <option value="cans">Can</option>
-        <option value="cups">Cup</option>
-      </select>
-      <button id="add-item" type="button">Add Item</button>
+    <div class="header-row">
+      <h1 id="title">everything is trash</h1>
+      <div class="controls">
+        <select id="item-type">
+          <option value="cans">Can</option>
+          <option value="cups">Cup</option>
+        </select>
+        <button id="add-item" type="button">Add Item</button>
+      </div>
     </div>
     <div id="trash-items">
       <img
       id="cup-1"  
       class="trash"
-        src="./cups/1.png"
+        src="./cups/1.svg"
         data-type="cups"
         data-count="1"
         can-move
@@ -31,7 +58,7 @@
       <img
       id="can-1"
         class="trash"
-        src="./cans/1.png"
+        src="./cans/1.svg"
         data-type="cans"
         data-count="1"
         can-move
