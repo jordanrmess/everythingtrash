@@ -98,7 +98,6 @@ body {
   align-items: flex-start;
   width: min(100%, 1080px);
   max-height: calc(100vh - 6rem);
-  overflow: hidden;
   position: relative;
 }
 
