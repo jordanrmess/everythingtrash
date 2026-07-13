@@ -14,8 +14,13 @@ const setupPlayElement = (element) => {
 };
 
 const trashItems = document.getElementById("trash-items");
+// initialize image behavior (click/crush)
 document.querySelectorAll(".trash").forEach((element) => {
   initTrash(element);
+});
+
+// initialize playhtml/movement for any element that has the can-move attribute
+document.querySelectorAll("[can-move]").forEach((element) => {
   setupPlayElement(element);
 });
 
@@ -37,3 +42,13 @@ document.getElementById("add-item").addEventListener("click", () => {
   initTrash(newItem);
   setupPlayElement(newItem);
 });
+
+// prevent touch scrolling on mobile while keeping inputs functional
+document.addEventListener(
+  "touchmove",
+  function (e) {
+    if (e.target.closest && e.target.closest("input, textarea, select")) return;
+    e.preventDefault();
+  },
+  { passive: false },
+);

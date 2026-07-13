@@ -32,11 +32,28 @@ body {
   width: min(100%, 1080px);
 }
 
+.header-row {
+  flex-shrink: 0;
+}
+
 .header-row h1 {
   margin: 0;
   font-size: clamp(2.2rem, 6vw, 4rem);
   line-height: 1.05;
 }
+
+.letter {
+  display: inline-block;
+  line-height: 1;
+  margin: 0 0.03em;
+  font-size: inherit;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+  cursor: grab;
+}
+
+.spc { display: inline-block; width: 0.45em; }
 
 .controls {
   display: inline-flex;
@@ -78,15 +95,17 @@ body {
   flex-wrap: wrap;
   gap: 1.1rem;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: min(100%, 1080px);
-  max-height: calc(100vh - 9.5rem);
+  max-height: calc(100vh - 6rem);
   overflow: hidden;
   position: relative;
 }
 
 .trash {
-  width: clamp(140px, 28vw, 200px);
+  width: auto;
+  max-width: min(44vw, 200px);
+  max-height: 36vh;
   height: auto;
   touch-action: manipulation;
   cursor: pointer;
@@ -97,6 +116,7 @@ body {
   -ms-user-select: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
+  object-fit: contain;
 }
 
 .trash:active,
