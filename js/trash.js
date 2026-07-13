@@ -95,6 +95,9 @@ export class Trash {
       } else if (this.type === "lamps") {
         const audio = new Audio("./lamps/crush.mp3");
         audio.play().catch(() => {});
+      } else {
+        const audio = new Audio("./lamps/crush.mp3");
+        audio.play().catch(() => {});
       }
     }
   }

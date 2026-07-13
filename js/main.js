@@ -37,6 +37,7 @@ document.getElementById("add-item").addEventListener("click", () => {
   newItem.dataset.type = itemType;
   newItem.dataset.count = "1";
   newItem.setAttribute("can-move", "");
+  newItem.draggable = false;
 
   trashItems.appendChild(newItem);
   initTrash(newItem);

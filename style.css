@@ -47,13 +47,34 @@ body {
   line-height: 1;
   margin: 0 0.03em;
   font-size: inherit;
-  -webkit-user-select: none;
-  user-select: none;
   touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
   cursor: grab;
 }
 
-.spc { display: inline-block; width: 0.45em; }
+.spc {
+  display: inline-block;
+  width: 0.45em;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
+}
+
+#title {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  cursor: grab;
+}
+
 
 .controls {
   display: inline-flex;
@@ -106,13 +127,16 @@ body {
   max-width: min(44vw, 200px);
   max-height: 36vh;
   height: auto;
-  touch-action: manipulation;
+  touch-action: none;
   cursor: pointer;
   transition: transform 0.15s ease;
+  will-change: transform;
+  backface-visibility: hidden;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+  -webkit-user-drag: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
   object-fit: contain;
@@ -122,3 +146,14 @@ body {
 .trash:hover {
   transform: scale(1.03);
 }
+
+@media (pointer: coarse) {
+  .trash {
+    transition: none;
+  }
+
+  .trash:active {
+    transform: none;
+  }
+}
+

@@ -11,7 +11,7 @@
 
   <body>
     <div class="header-row">
-      <h1 id="title">
+      <h1 id="title" can-move>
         <span class="letter" can-move>e</span>
         <span class="letter" can-move>v</span>
         <span class="letter" can-move>e</span>
@@ -22,10 +22,10 @@
         <span class="letter" can-move>i</span>
         <span class="letter" can-move>n</span>
         <span class="letter" can-move>g</span>
-        <span class="spc"> </span>
+        <span class="spc" can-move> </span>
         <span class="letter" can-move>i</span>
         <span class="letter" can-move>s</span>
-        <span class="spc"> </span>
+        <span class="spc" can-move> </span>
         <span class="letter" can-move>t</span>
         <span class="letter" can-move>r</span>
         <span class="letter" can-move>a</span>
@@ -46,35 +46,39 @@
       <img
       id="cup-1"
       class="trash"
-        src="./cups/1.svg"
-        data-type="cups"
-        data-count="1"
-        can-move
-      />
+      src="./cups/1.svg"
+      data-type="cups"
+      data-count="1"
+      can-move
+      draggable="false"
+    />
       <img
       id="can-1"
-        class="trash"
-        src="./cans/1.svg"
-        data-type="cans"
-        data-count="1"
-        can-move
-      />
+      class="trash"
+      src="./cans/1.svg"
+      data-type="cans"
+      data-count="1"
+      can-move
+      draggable="false"
+    />
        <img
       id="lamp-1"
-        class="trash"
-        src="./lamps/1.svg"
-        data-type="lamps"
-        data-count="1"
-        can-move
-      />
+      class="trash"
+      src="./lamps/1.svg"
+      data-type="lamps"
+      data-count="1"
+      can-move
+      draggable="false"
+    />
       <img
       id="glasses-1"
-        class="trash"
-        src="./glasses/1.svg"
-        data-type="glasses"
-        data-count="1"
-        can-move
-      />
+      class="trash"
+      src="./glasses/1.svg"
+      data-type="glasses"
+      data-count="1"
+      can-move
+      draggable="false"
+    />
     </div>
     <script type="module" src="./js/main.js"></script>
     <script type="module">
