@@ -11,27 +11,25 @@
 
   <body>
     <div class="header-row">
-      <h1 id="title" can-move>
-        <span class="letter" can-move>e</span>
-        <span class="letter" can-move>v</span>
-        <span class="letter" can-move>e</span>
-        <span class="letter" can-move>r</span>
-        <span class="letter" can-move>y</span>
-        <span class="letter" can-move>t</span>
-        <span class="letter" can-move>h</span>
-        <span class="letter" can-move>i</span>
-        <span class="letter" can-move>n</span>
-        <span class="letter" can-move>g</span>
-        <span class="spc" can-move> </span>
-        <span class="letter" can-move>i</span>
-        <span class="letter" can-move>s</span>
-        <span class="spc" can-move> </span>
-        <span class="letter" can-move>t</span>
-        <span class="letter" can-move>r</span>
-        <span class="letter" can-move>a</span>
-        <span class="letter" can-move>s</span>
-        <span class="letter" can-move>h</span>
-      </h1>
+        <span id="e" class="letter" can-move can-mirror>e</span>
+        <span id="v" class="letter" can-move can-mirror>v</span>
+        <span id="e2" class="letter" can-move can-mirror>e</span>
+        <span id="r" class="letter" can-move can-mirror>r</span>
+        <span id="y" class="letter" can-move can-mirror>y</span>
+        <span id="t" class="letter" can-move can-mirror>t</span>
+        <span id="h" class="letter" can-move can-mirror>h</span>
+        <span id="i" class="letter" can-move can-mirror>i</span>
+        <span id="n" class="letter" can-move can-mirror>n</span>
+        <span id="g" class="letter" can-move can-mirror>g</span>
+        <span id="space1" class="spc" can-move can-mirror> </span>
+        <span id="i2" class="letter" can-move can-mirror>i</span>
+        <span id="s" class="letter" can-move can-mirror>s</span>
+        <span id="space2" class="spc" can-move can-mirror> </span>
+        <span id="t2" class="letter" can-move can-mirror>t</span>
+        <span id="r2" class="letter" can-move can-mirror>r</span>
+        <span id="a" class="letter" can-move can-mirror>a</span>
+        <span id="s2" class="letter" can-move can-mirror>s</span>
+        <span id="h2" class="letter" can-move can-mirror>h</span>
       <div class="controls">
         <select id="item-type">
           <option value="cans">Can</option>
@@ -42,6 +40,7 @@
         <button id="add-item" type="button">Add Item</button>
       </div>
     </div>
+    <img id="trashcan" class="trashcan" src="./trashcan/trash_closed.png" alt="trash">
     <div id="trash-items">
       <img
       id="cup-1"
@@ -50,6 +49,7 @@
       data-type="cups"
       data-count="1"
       can-move
+      can-mirror
       draggable="false"
     />
       <img
@@ -59,6 +59,7 @@
       data-type="cans"
       data-count="1"
       can-move
+      can-mirror
       draggable="false"
     />
        <img
@@ -68,6 +69,7 @@
       data-type="lamps"
       data-count="1"
       can-move
+      can-mirror
       draggable="false"
     />
       <img
@@ -77,6 +79,7 @@
       data-type="glasses"
       data-count="1"
       can-move
+      can-mirror
       draggable="false"
     />
     </div>

@@ -24,6 +24,17 @@ document.querySelectorAll("[can-move]").forEach((element) => {
   setupPlayElement(element);
 });
 
+// trash can hover effect
+const trashcanImg = document.getElementById("trashcan");
+if (trashcanImg) {
+  trashcanImg.addEventListener("mouseenter", () => {
+    trashcanImg.src = "./trashcan/trash_open.png";
+  });
+  trashcanImg.addEventListener("mouseleave", () => {
+    trashcanImg.src = "./trashcan/trash_closed.png";
+  });
+}
+
 document.getElementById("add-item").addEventListener("click", () => {
   const itemType = document.getElementById("item-type").value;
   const newItem = document.createElement("img");
@@ -37,6 +48,7 @@ document.getElementById("add-item").addEventListener("click", () => {
   newItem.dataset.type = itemType;
   newItem.dataset.count = "1";
   newItem.setAttribute("can-move", "");
+  newItem.setAttribute("can-mirror", "");
   newItem.draggable = false;
 
   trashItems.appendChild(newItem);
