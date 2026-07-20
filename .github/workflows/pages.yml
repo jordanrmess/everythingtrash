@@ -22,7 +22,7 @@ jobs:
       - name: Prepare Pages artifact
         run: |
           mkdir -p out
-          cp -r index.html style.css cans cups lamps js .nojekyll CNAME out/
+          cp -r index.html style.css cans cups lamp desk chair js .nojekyll CNAME out/
 
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v5
