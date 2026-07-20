@@ -24,10 +24,10 @@ export class Trash {
         const audio = new Audio("./cups/crush.mp3");
         audio.play().catch(() => {});
       } else if (this.type === "lamp") {
-        const audio = new Audio("./lamps/crush.mp3");
+        const audio = new Audio("./lamp/crush.mp3");
         audio.play().catch(() => {});
       } else {
-        const audio = new Audio("./lamps/crush.mp3");
+        const audio = new Audio("./lampß/crush.mp3");
         audio.play().catch(() => {});
       }
     }
