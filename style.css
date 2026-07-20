@@ -12,7 +12,7 @@ body {
   min-height: 100vh;
   height: 100%;
   overflow: hidden;
-  font-family: 'Rock 3D', sans-serif;
+  font-family: "Rock 3D", sans-serif;
   background: #ffffff;
   color: #111;
   padding: 1rem;
@@ -24,29 +24,12 @@ body {
 }
 
 .header-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  width: min(100%, 1080px);
-}
-
-.header-row h1 {
-  margin: 0;
-  font-size: clamp(3.5rem, 10vw, 6rem);
-  line-height: 1.05;
-}
-
-.letter {
-  margin: 0 0.03em;
-  display: inline-block;
-  font-size: 3em;
-  touch-action: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
-  cursor: grab;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1rem;
 }
 
 .spc {
@@ -59,20 +42,7 @@ body {
   cursor: grab;
 }
 
-#title {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  touch-action: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
-  cursor: grab;
-}
-
-
 .controls {
-  display: none;
   align-items: center;
   justify-content: flex-start;
   gap: 0.6rem;
@@ -117,20 +87,49 @@ body {
   z-index: 100;
 }
 
+#reset-btn {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.92rem;
+  min-height: 40px;
+  padding: 0.65rem 0.95rem;
+  border-radius: 0.85rem;
+  background: #2f2b75;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  z-index: 100;
+}
+
+#reset-btn:active {
+  transform: scale(0.98);
+}
+
 #trash-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.1rem;
-  justify-content: center;
-  align-items: flex-start;
-  width: min(100%, 1080px);
-  max-height: calc(100vh - 6rem);
   position: relative;
+  width: min(100%, 1080px);
+  height: auto;
+  margin: 0 auto;
+}
+
+.desk {
+  width: 45%;
+  bottom: 10%;
+  left: 25%;
+}
+
+.chair {
+  width: 25%;
+  bottom: 5%;
+  left: 10%;
 }
 
 .trash {
+  position: absolute;
   width: auto;
-  max-width: min(44vw, 200px);
   max-height: 36vh;
   height: auto;
   touch-action: none;
@@ -146,11 +145,42 @@ body {
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
   object-fit: contain;
+  transform: translateX(var(--translate-x, 0));
 }
 
-.trash:active,
-.trash:hover {
-  transform: scale(1.03);
+.trash[data-type="desk"] {
+  width: min(120vw, 1040px);
+  left: 50%;
+  bottom: 0;
+  --translate-x: -50%;
+  z-index: 1;
+}
+
+.trash[data-type="lamp"] {
+  width: min(18vw, 180px);
+  right: 18%;
+  bottom: 22vh;
+  z-index: 2;
+}
+
+.trash[data-type="cups"],
+.trash[data-type="cans"],
+.trash[data-type="glasses"] {
+  width: min(10vw, 120px);
+  bottom: 18vh;
+  z-index: 3;
+}
+
+.trash[data-type="cups"] {
+  left: 38%;
+}
+
+.trash[data-type="cans"] {
+  left: 48%;
+}
+
+.trash[data-type="glasses"] {
+  left: 58%;
 }
 
 @media (pointer: coarse) {
@@ -162,4 +192,3 @@ body {
     transform: none;
   }
 }
-

@@ -23,7 +23,7 @@ export class Trash {
       } else if (this.type === "cups") {
         const audio = new Audio("./cups/crush.mp3");
         audio.play().catch(() => {});
-      } else if (this.type === "lamps") {
+      } else if (this.type === "lamp") {
         const audio = new Audio("./lamps/crush.mp3");
         audio.play().catch(() => {});
       } else {

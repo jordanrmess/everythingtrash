@@ -1,87 +1,87 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>cup</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rock+3D&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
     <div class="header-row">
-        <span id="e" class="letter" can-move can-mirror>e</span>
-        <span id="v" class="letter" can-move can-mirror>v</span>
-        <span id="e2" class="letter" can-move can-mirror>e</span>
-        <span id="r" class="letter" can-move can-mirror>r</span>
-        <span id="y" class="letter" can-move can-mirror>y</span>
-        <span id="t" class="letter" can-move can-mirror>t</span>
-        <span id="h" class="letter" can-move can-mirror>h</span>
-        <span id="i" class="letter" can-move can-mirror>i</span>
-        <span id="n" class="letter" can-move can-mirror>n</span>
-        <span id="g" class="letter" can-move can-mirror>g</span>
-        <span id="space1" class="spc" can-move can-mirror> </span>
-        <span id="i2" class="letter" can-move can-mirror>i</span>
-        <span id="s" class="letter" can-move can-mirror>s</span>
-        <span id="space2" class="spc" can-move can-mirror> </span>
-        <span id="t2" class="letter" can-move can-mirror>t</span>
-        <span id="r2" class="letter" can-move can-mirror>r</span>
-        <span id="a" class="letter" can-move can-mirror>a</span>
-        <span id="s2" class="letter" can-move can-mirror>s</span>
-        <span id="h2" class="letter" can-move can-mirror>h</span>
+      <h1>destroy my room</h1>
       <div class="controls">
         <select id="item-type">
           <option value="cans">Can</option>
           <option value="cups">Cup</option>
           <option value="lamps">Lamp</option>
           <option value="glasses">Glasses</option>
+          <option value="desk">Desk</option>
+          <option value="chair">Chair</option>
         </select>
         <button id="add-item" type="button">Add Item</button>
       </div>
     </div>
-    <img id="trashcan" class="trashcan" src="./trashcan/trash_closed.png" alt="trash">
     <div id="trash-items">
       <img
-      id="cup-1"
-      class="trash"
-      src="./cups/1.svg"
-      data-type="cups"
-      data-count="1"
-      can-move
-      can-mirror
-      draggable="false"
-    />
+        id="cup-1"
+        class="trash"
+        src="./cups/1.svg"
+        data-type="cups"
+        data-count="1"
+        can-move
+        draggable="false"
+      />
       <img
-      id="can-1"
-      class="trash"
-      src="./cans/1.svg"
-      data-type="cans"
-      data-count="1"
-      can-move
-      can-mirror
-      draggable="false"
-    />
-       <img
-      id="lamp-1"
-      class="trash"
-      src="./lamps/1.svg"
-      data-type="lamps"
-      data-count="1"
-      can-move
-      can-mirror
-      draggable="false"
-    />
+        id="can-1"
+        class="trash"
+        src="./cans/1.svg"
+        data-type="cans"
+        data-count="1"
+        can-move
+        draggable="false"
+      />
       <img
-      id="glasses-1"
-      class="trash"
-      src="./glasses/1.svg"
-      data-type="glasses"
-      data-count="1"
-      can-move
-      can-mirror
-      draggable="false"
-    />
+        id="lamp-1"
+        class="trash"
+        src="./lamp/1.svg"
+        data-type="lamp"
+        data-count="1"
+        can-move
+        draggable="false"
+      />
+      <img
+        id="chair-1"
+        class="trash chair"
+        src="./chair/1.svg"
+        data-type="chair"
+        data-count="1"
+        can-move
+        draggable="false"
+      />
+      <img
+        id="desk-1"
+        class="trash desk"
+        src="./desk/1.svg"
+        data-type="desk"
+        data-count="1"
+        can-move
+        draggable="false"
+      />
+      <img
+        id="glasses-1"
+        class="trash"
+        src="./glasses/1.svg"
+        data-type="glasses"
+        data-count="1"
+        can-move
+        draggable="false"
+      />
     </div>
     <script type="module" src="./js/main.js"></script>
     <script type="module">
